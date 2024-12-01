@@ -9,8 +9,6 @@ st.write(
     """Choose the fruits you want in your custom Smoothie!
     """)
 
-import streamlit as st
-
 name_on_order = st.text_input("Name on Smoothie")
 st.write('The name on your Smoothie will be:', name_on_order)
 
@@ -21,7 +19,7 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 
 # Convert the Snowpark Dataframe to a Pandas Dataframe so we can use the LOC function
 pd_df=my_dataframe.to_pandas()
-st.dataframe(pd_df)
+#st.dataframe(pd_df)
 #st.stop()
 
 ingredients_list = st.multiselect(
